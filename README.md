@@ -3,7 +3,7 @@ Ever since I've made my own version of the original Let's Split v2 keyboard, the
 
 This adds the support for the [wootpatoot](https://www.reddit.com/user/wootpatoot/)'s [Let's Split v2](https://www.reddit.com/r/MechanicalKeyboards/comments/5funsl/guidelets_split_v2_assembly_instructions/) keyboard to the [ZMK firmware](https://zmk.dev/). The original keyboard was wired and used Arduino Pro Micro boards with QMK firmware. However, nice!nano v2 borad could be used as a Bluetooth-enabled drop-in replacement for the Pro Micros. It contains nrf52840 SoC and runs ZMK firmware. The official ZMK firmware doesn't support the Let's Split v2 keyboard in particular, so this repo is a ZMK module adding that support.
 
-## Instructions to build the keyboard
+## Building ZMK with support for Let's Split v2
 First of all, follow [the steps](https://zmk.dev/docs/user-setup) until the step "Config Repo Setup". Then:
 
 1. `zmk init`
