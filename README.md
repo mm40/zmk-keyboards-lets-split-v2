@@ -1,4 +1,4 @@
-# Let's Split v2 keyboard module for ZMK
+# Let's Split v2 keyboard module for ZMK, by mm40
 
 This adds the support for the wootpatoot's Let's Split v2 keyboard to the ZMK firmware. The original keyboard was wired and used Arduino Pro Micro boards with QMK firmware. However, nice!nano v2 borad could be used as a Bluetooth-enabled drop-in replacement for the Pro Micros. It contains nrf52840 SoC and runs ZMK firmware. The official ZMK firmware doesn't support the Let's Split v2 keyboard in particular, so this repo is a module adding that support.
 
