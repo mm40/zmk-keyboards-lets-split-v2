@@ -18,4 +18,4 @@ First of all, follow [the steps](https://zmk.dev/docs/user-setup) until the step
 
 <img width="4000" height="3000" alt="IMG_20230819_093236" src="https://github.com/user-attachments/assets/50ebfed0-afca-46a7-960c-a17cb8c8da26" />
 <img width="4000" height="3000" alt="IMG_20230819_093446" src="https://github.com/user-attachments/assets/3a1a8797-d0d0-4fee-93e3-fc4e8b692917" />
-<img width="4000" height="3000" alt="IMG_20230819_093407" src="https://github.com/user-attachments/assets/ecbd532f-efd0-4762-8f91-211b22e7c9a2" />
+<img width="3121" height="2173" alt="cropped-image" src="https://github.com/user-attachments/assets/4a2c8363-3b05-4f50-ac42-1275fa10898a" />
