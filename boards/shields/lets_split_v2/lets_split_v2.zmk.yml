@@ -1,0 +1,11 @@
+file_format: "1"
+id: "lets_split_v2"
+name: Let's Split v2
+type: shield
+url: https://github.com/mm40/zmk-keyboards-lets-split-v2
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - lets_split_v2_left
+  - lets_split_v2_right

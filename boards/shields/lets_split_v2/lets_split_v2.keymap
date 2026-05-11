@@ -1,0 +1,124 @@
+/*
+ * by github.com/mm40
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define UP   1
+#define LOW   2
+
+/ {
+    macros {
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+	email: email {
+	      label = "E-Mail-Input";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap
+		&kp AT
+		>
+		;
+	};
+
+	phone: phone {
+	      label = "Phone-Input";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap
+		&kp PLUS
+		>
+		;
+	};
+
+	firstname: firstname {
+	      label = "First-Name-Input";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+	 	= <&macro_press &kp LSHFT>
+                , <&macro_tap &kp M>
+		, <&macro_release &kp LSHFT>
+                , <&macro_tap
+		>
+                ;
+	};
+
+	lastname: lastname {
+	      label = "Last-Name-Input";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+	 	= <&macro_press &kp LSHFT>
+                , <&macro_tap &kp M>
+		, <&macro_release &kp LSHFT>
+                , <&macro_tap
+		>
+                ;
+	};
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // |  TAB  |  Q   |  W   |  E   |  R   |  T   |                | Y   |  U    |  I   |  O   |   P   | BSPC  |
+            // |  [ {  |  A   |  S   |  D   |  F   |  G   |                | H   |  J    |  K   |  L   |   ;:  |  '"   |
+            // | ] }   |  Z   |  X   |  C   |  V   |  B   |                | N   |  M    |  ,<  |  .>  |   /?  |  -_   |
+            // | MACRO |  LOW |  =+  | LSHFT| SPACE| RAISE|                |LGUI | CTRL  | LALT |  `~  |  \|   | MACRO |
+
+            bindings = <
+            &kp TAB   &kp Q    &kp W    &kp E     &kp R &kp T              &kp Y     &kp U    &kp I     &kp O    &kp P    &kp BSPC
+            &kp LBKT   &kp A    &kp S    &kp D     &kp F &kp G              &kp H     &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+            &kp RBKT &kp Z    &kp X    &kp C     &kp V &kp B              &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &kp MINUS
+            &kp Q     &mo LOW &kp EQUAL &kp LSHIFT &kp SPACE &mo UP          &kp LGUI &kp LCTRL &kp LALT  &kp GRAVE &kp BSLH   &kp W
+            >;
+        };
+
+        UPPER {
+            // | ESC  |  !   |  @   |  #   |  $   |  %   |                  |  ^   |  &   |  *   |  (   |  )   | DEL  |
+            // | PRNT |  1   |  2   |  3   |  4   |  5   |                  |  6   |  7   |  8   |  9   |  0   | INS  |
+            // | F12  |  F1  |  F2  |  F3  |  F4  |  F5  |                  |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
+            // | REC1 | VOL- | VOL+ | MUTE | MENU |(NONE)|                  | ENTER|      | PREV | NEXT | PLAY | REC2 |
+
+
+            bindings = <
+            &kp ESC &kp EXCL &kp AT &kp POUND &kp DLLR &kp PRCNT              &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
+            &kp PSCRN &kp N1 &kp N2 &kp N3 &kp N4 &kp N5              &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp INS
+            &kp F12 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5              &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+            &none &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp K_CMENU &none              &kp RET &none &kp C_PREV &kp C_NEXT &kp C_PP &none
+            >;
+        };
+
+	LOWER {
+
+            // |BT_CLR|BT-4  |KP_+  |KP_N7 |KP_8  |KP_N9 |                  |KP_DOT| HOME | PGDW | PGUP | END  |_EMAIL|
+            // |BT-2  |BT-3  |KP_-  |KP_N4 |KP_N5 |KP_N6 |                  |KP_N0 | LEFT | DOWN |  UP  | RIGHT|_PHONE|
+            // |BT-0  |BT-1  |KP_*  |KP_N1 |KP_N2 |KP_N3 |                  |KP_ENT|      |      |      |      |_FNAME|
+            // |OUT_TG|(NONE)|KP_/  |TRANS | CAPS |TRANS |                  |PAUSE |      |      |      |      |_LNAME|
+
+
+            bindings = <
+            &bt BT_CLR &bt BT_SEL 4 &kp KP_PLUS &kp KP_N7 &kp KP_N8 &kp KP_N9              &kp KP_DOT &kp HOME &kp PG_DN &kp PG_UP &kp END &email
+            &bt BT_SEL 2 &bt BT_SEL 3 &kp KP_MINUS &kp KP_N4 &kp KP_N5 &kp KP_N6              &kp KP_N0 &kp LEFT &kp DOWN &kp UP_ARROW &kp RIGHT &phone
+            &bt BT_SEL 0 &bt BT_SEL 1 &kp KP_MULTIPLY &kp KP_N1 &kp KP_N2 &kp KP_N3              &kp KP_ENTER &trans &trans &trans &trans &firstname
+      &out OUT_TOG &trans &kp KP_DIVIDE &trans &kp CAPS &trans              &kp PAUSE_BREAK &trans &trans &trans &trans &lastname
+            >;
+        };
+    };
+};

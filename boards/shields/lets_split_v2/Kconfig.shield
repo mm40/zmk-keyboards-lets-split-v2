@@ -1,0 +1,7 @@
+# by github.com/mm40
+
+config SHIELD_LETS_SPLIT_V2_LEFT
+      def_bool $(shields_list_contains,lets_split_v2_left)
+
+config SHIELD_LETS_SPLIT_V2_RIGHT
+      def_bool $(shields_list_contains,lets_split_v2_right)
