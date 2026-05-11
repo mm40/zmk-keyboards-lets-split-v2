@@ -1,7 +1,5 @@
 /*
- * Copyright (c) 2024 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
+ * by github.com/mm40
  */
  
 #include <dt-bindings/zmk/matrix_transform.h>
